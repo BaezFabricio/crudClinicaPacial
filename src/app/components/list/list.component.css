@@ -10,3 +10,18 @@ i {
   background-color: #ffffff;
 
 }
+
+.h3{
+  position: relative;
+  left: 450px;
+}
+
+.card{
+  position: relative;
+  top: 200px;
+
+}
+
+.card-body{
+  background-color: rgba(92, 95, 94, 0.279);
+}

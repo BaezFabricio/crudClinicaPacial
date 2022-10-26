@@ -14,7 +14,7 @@ export class CreateComponent implements OnInit {
   submitted = false;
   loading = false;
   id: string | null;
-  titulo = 'Plantilla de Ingreso del Personal';
+  titulo = 'Agregar Datos Paciente';
 
   constructor(private fb: FormBuilder,
     private _personalService: FirestoreService,

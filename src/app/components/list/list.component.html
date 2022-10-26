@@ -1,9 +1,9 @@
 <div class="container mt-4 ml-0">
   <div class="card">
       <div class="card-body">
-          <span class="h3">Listado de Personal</span>
-            <button class="btn btn-dark btn-lg float-right" routerLink="/create-objets">Agregar</button>
-          <h5 style="margin-top: 20px;" *ngIf="personal.length == 0">No hay datos para mostrar</h5>
+          <span class="h3">Diagnostico Paciente</span>
+            <button class="btn btn-danger btn-lg float-left" routerLink="/create-objets">Agregar</button>
+          <h5 style="margin-top: 20px;" *ngIf="personal.length == 0">Datos Vacios</h5>
           <table *ngIf="personal.length > 0" class="table table-striped mt-5">
               <thead>
                 <tr>
