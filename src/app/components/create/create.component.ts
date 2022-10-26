@@ -42,6 +42,30 @@ export class CreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.editarPersonalVentana();
+    var meses = ["01", "02", "03","04", "05", "06", "07","08", "09", "10","11", "12"]
+    var date = new Date();
+    var hora = date.getHours();
+    var minutos = date.getMinutes();
+    var dia = date.getDate();
+    var mes = date.getMonth();
+    var yyy = date.getFullYear();
+    var fecha = dia + '/' + meses[mes] + '/' + yyy
+    var horaExacta = hora + ':' + minutos
+    this.personal.setValue({
+      fecha: fecha,
+      hora: horaExacta,
+      nombreyapellido: "",
+      temperatura: "",
+      tos: "",
+      insuficiencia: "",
+      dolorgarganta: "",
+      perdidaolfato: "",
+      perdidagusto: "",
+      otros: "",
+      contactoaislamiento: "",
+      contactoviaje: "",
+      lugar: "",
+      observaciones: "",})
   }
 
   agregarEditarPersonal() {
@@ -60,17 +84,27 @@ export class CreateComponent implements OnInit {
   }
 
   agregarPersonal() {
-    const mensajeError = "Debe ingresar - o si en el campo: "
-    if(this.personal.value.temperatura == "si" || this.personal.value.temperatura == "-"){
-      if(this.personal.value.tos == "si" || this.personal.value.tos == "-"){
-        if(this.personal.value.insuficiencia == "si" || this.personal.value.insuficiencia == "-"){
-          if(this.personal.value.dolorgarganta == "si" || this.personal.value.dolorgarganta == "-"){
-            if(this.personal.value.perdidaolfato == "si" || this.personal.value.perdidaolfato == "-"){
-              if(this.personal.value.perdidagusto == "si" || this.personal.value.perdidagusto == "-"){
-                if(this.personal.value.otros == "si" || this.personal.value.otros == "-"){
+    var meses = ["Enero", "Febrero", "Marzo","Abril", "Mayo", "Junio", "Julio","Agosto", "Septiembre", "Octubre","Noviembre", "Diciembre"]
+    var date = new Date();
+    var hora = date.getHours();
+    var minutos = date.getMinutes();
+    var dia = date.getDate();
+    var mes = date.getMonth();
+    var yyy = date.getFullYear();
+    var fecha = dia + ' de ' + meses[mes] + ' de ' + yyy
+    var horaExacta = hora + ':' + minutos
+    // dia + ' de ' + meses[mes] + ' de ' + yyy,
+    // hora + ':' + minutos,
+    if((this.personal.value.temperatura).toLowerCase() == "si" || this.personal.value.temperatura == "-"){
+      if((this.personal.value.tos).toLowerCase() == "si" || this.personal.value.tos == "-"){
+        if((this.personal.value.insuficiencia).toLowerCase() == "si" || this.personal.value.insuficiencia == "-"){
+          if((this.personal.value.dolorgarganta).toLowerCase() == "si" || this.personal.value.dolorgarganta == "-"){
+            if((this.personal.value.perdidaolfato.toLowerCase()) == "si" || this.personal.value.perdidaolfato == "-"){
+              if((this.personal.value.perdidagusto.toLowerCase()) == "si" || this.personal.value.perdidagusto == "-"){
+                if((this.personal.value.otros.toLowerCase()) == "si" || this.personal.value.otros == "-"){
                   const personal: any = {
-                    fecha: this.personal.value.fecha,
-                    hora: this.personal.value.hora,
+                    fecha: fecha,
+                    hora: horaExacta,
                     nombreyapellido: this.personal.value.nombreyapellido,
                     temperatura: this.personal.value.temperatura,
                     tos: this.personal.value.tos,

@@ -1,6 +1,6 @@
 <div class="container pt-4">
   <div class="row">
-      <div class="col-lg-6 offset-lg-1">
+      <div class="col-lg-6 offset-lg-0">
           <div class="card text-center">
               <div class="card-body">
                   <h3>{{ titulo }}
@@ -9,16 +9,16 @@
                         </div>
                   </h3>
                   <span *ngIf="submitted && personal.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
-                  <form class="mt-4" [formGroup]="personal" (ngSubmit)="agregarEditarPersonal()">
+                  <form class="mt-3" [formGroup]="personal" (ngSubmit)="agregarEditarPersonal()">
                       <div class="row">
                           <div class="col">
                               <input type="fecha" class="form-control form-control-lg" formControlName="fecha"
-                                  placeholder="Fecha">
+                                  placeholder="Fecha" readonly>
                           </div>
 
                           <div class="col">
                             <input type="text" class="form-control form-control-lg" formControlName="hora"
-                                placeholder="Hora">
+                                placeholder="Hora" readonly>
                           </div>
 
                           <div class="col">
@@ -26,23 +26,29 @@
                                 placeholder="Nombre">
                           </div>
 
-                          <div class="col">
-                            <input type="text" class="form-control form-control-lg" formControlName="temperatura"
-                                placeholder="Temperatura">
-                          </div>
-
-                          <div class="col">
-                            <input type="text" class="form-control form-control-lg" formControlName="tos"
-                                placeholder="Tos">
-                          </div>
-
                       </div>
 
+                      <h2 class="mt-2">Sintomas</h2>
+
                       <div class="row mt-3">
+                        <div class="col">
+                          <input type="text" class="form-control form-control-lg" formControlName="temperatura"
+                              placeholder="Temperatura">
+                        </div>
+
+                        <div class="col">
+                          <input type="text" class="form-control form-control-lg" formControlName="tos"
+                              placeholder="Tos">
+                        </div>
+
                         <div class="col">
                           <input type="text" class="form-control form-control-lg" formControlName="insuficiencia"
                               placeholder="Insuficiencia Respiratoria">
                         </div>
+
+                      </div>
+
+                      <div class="row mt-3">
 
                         <div class="col">
                           <input type="text" class="form-control form-control-lg" formControlName="dolorgarganta"
@@ -58,32 +64,35 @@
                           <input type="text" class="form-control form-control-lg" formControlName="perdidagusto"
                               placeholder="Perdida Gusto">
                         </div>
-                      </div>
 
-                      <div class="row mt-3">
                         <div class="col">
                             <input type="text" class="form-control form-control-lg" formControlName="otros"
                                 placeholder="Otros">
                         </div>
 
+                      </div>
+
+                      <div class="row mt-3">
+
                         <div class="col">
                           <input type="text" class="form-control form-control-lg" formControlName="contactoaislamiento"
-                              placeholder="Contacto Aislamiento">
+                              placeholder="Tuvo contacto con alguien en aislamiento">
                         </div>
 
                         <div class="col">
                           <input type="text" class="form-control form-control-lg" formControlName="contactoviaje"
-                              placeholder="Contacto Viaje">
-                        </div>
-
-                        <div class="col">
-                          <input type="text" class="form-control form-control-lg" formControlName="lugar"
-                              placeholder="Lugar">
+                              placeholder="Tuvo contacto con alguien que viajo">
                         </div>
 
                       </div>
 
                       <div class="row mt-3">
+
+                        <div class="col">
+                          <input type="text" class="form-control form-control-lg" formControlName="lugar"
+                              placeholder="Lugar en donde tuvo contacto">
+                        </div>
+
                         <div class="col">
                           <input type="text" class="form-control form-control-lg" formControlName="observaciones"
                               placeholder="Observaciones">
